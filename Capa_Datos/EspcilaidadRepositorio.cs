@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Capa_Entidad;
+using Capoa_Entidad;
 
-
-namespace PROYECTO
+namespace Capa_Datos
 {
     public class EspcilaidadRepositorio:IRepositorio<Especialidad>
     {

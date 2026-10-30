@@ -45,8 +45,9 @@
             this.lblCita3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblMenuMedico = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -236,7 +237,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.guna2PictureBox2);
-            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.lblMenuMedico);
             this.panel2.Location = new System.Drawing.Point(374, -4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(910, 99);
@@ -253,20 +254,21 @@
             this.guna2PictureBox2.TabIndex = 17;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // label13
+            // lblMenuMedico
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(124, 22);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(367, 45);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Menu Medico Principal";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.lblMenuMedico.AutoSize = true;
+            this.lblMenuMedico.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuMedico.Location = new System.Drawing.Point(124, 22);
+            this.lblMenuMedico.Name = "lblMenuMedico";
+            this.lblMenuMedico.Size = new System.Drawing.Size(367, 45);
+            this.lblMenuMedico.TabIndex = 5;
+            this.lblMenuMedico.Text = "Menu Medico Principal";
+            this.lblMenuMedico.Click += new System.EventHandler(this.label13_Click);
             // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel2.Controls.Add(this.label1);
             this.guna2GradientPanel2.Controls.Add(this.label14);
             this.guna2GradientPanel2.Controls.Add(this.guna2PictureBox1);
@@ -278,6 +280,27 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(383, 660);
             this.guna2GradientPanel2.TabIndex = 13;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Image = global::PROYECTO.Properties.Resources.mi_perfil__1_;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Location = new System.Drawing.Point(11, 453);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.guna2Button1.Size = new System.Drawing.Size(366, 57);
+            this.guna2Button1.TabIndex = 9;
+            this.guna2Button1.Text = "Cerrar Sesion";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // label1
             // 
@@ -486,7 +509,7 @@
         private System.Windows.Forms.Label lblCita2;
         private System.Windows.Forms.Label lblCita3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblMenuMedico;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Label label1;
@@ -498,5 +521,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button btnEstado3;
         private Guna.UI2.WinForms.Guna2Button btnEstado2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

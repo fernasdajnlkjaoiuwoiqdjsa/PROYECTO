@@ -132,8 +132,9 @@
             this.guna2Button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.guna2Button2.Size = new System.Drawing.Size(366, 68);
             this.guna2Button2.TabIndex = 4;
-            this.guna2Button2.Text = "Mi Perfil";
+            this.guna2Button2.Text = "Cerrar Sesion";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 

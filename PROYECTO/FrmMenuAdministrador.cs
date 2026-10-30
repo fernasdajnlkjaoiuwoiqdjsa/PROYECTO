@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Capa_Entidad;   // Medico, Cita, Paciente, Usuario, Administrador, Especialidad
+using Capa_Negocio;
+using Capa_Datos;// ServicioCitas, ServicioAutenticacion, ServicioReportes
 
 namespace PROYECTO
 {
@@ -25,6 +28,7 @@ namespace PROYECTO
         {
             Administrador admin = Sesion.UsuarioActual as Administrador;
             if (admin == null) return;
+            lblMenuAdministrador.Text = "Bienvenido, " + admin.Username;
 
             try
             {
@@ -138,7 +142,7 @@ namespace PROYECTO
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            Sesion.CerrarYVolverAlLogin();
+
         }
     }
 }

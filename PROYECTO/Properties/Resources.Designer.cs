@@ -293,6 +293,16 @@ namespace PROYECTO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mi_perfil__1_ {
+            get {
+                object obj = ResourceManager.GetObject("mi_perfil (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mis_recetas {
             get {
                 object obj = ResourceManager.GetObject("mis_recetas", resourceCulture);

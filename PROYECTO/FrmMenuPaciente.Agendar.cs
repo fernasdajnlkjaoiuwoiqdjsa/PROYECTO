@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Capa_Entidad;   // Medico, Cita, Paciente, Usuario, Administrador, Especialidad
+using Capa_Negocio;
+using Capa_Datos;// ServicioCitas, ServicioAutenticacion, ServicioReportes
 
 namespace PROYECTO
 {
@@ -32,6 +35,8 @@ namespace PROYECTO
         {
             Paciente pac = Sesion.UsuarioActual as Paciente;
             if (pac == null) return;
+            lblMenuPaciente.Text = "Bienvenido, " + pac.Username;
+
 
             try
             {
@@ -201,5 +206,23 @@ namespace PROYECTO
                 CargarHorarios();       // por si otro paciente ocupó ese horario
             }
         }
+
+        /*private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FrmMenuPacient
+            // 
+            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.Name = "FrmMenuPacient";
+            this.Load += new System.EventHandler(this.FrmMenuPacient_Load);
+            this.ResumeLayout(false);
+
+        }
+
+       /* private void FrmMenuPacient_Load(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }

@@ -5,8 +5,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Capa_Entidad;
 
-namespace PROYECTO
+
+
+namespace Capa_Datos
 {
     public class ConexionBD
     {

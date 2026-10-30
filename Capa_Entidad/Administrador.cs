@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Capoa_Entidad;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PROYECTO
+
+namespace Capa_Entidad
 {
     public enum Operacion { Registrar, Actualizar, Eliminar }
 

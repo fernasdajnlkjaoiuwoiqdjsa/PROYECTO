@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Capa_Datos;
+using Capa_Entidad;
+using Capoa_Entidad;
+using PROYECTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PROYECTO
+namespace Capa_Negocio
 {
     public class ServicioCitas
     {

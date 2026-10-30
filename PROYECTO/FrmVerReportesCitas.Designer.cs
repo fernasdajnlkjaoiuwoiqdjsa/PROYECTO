@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,7 +42,7 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtpBuscarFecha = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpFecha = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbEstado = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -48,17 +51,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.dgvReportesCitasybuscralacita = new System.Windows.Forms.DataGridView();
+            this.chartCitas = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cmbAgrupar = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportesCitasybuscralacita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel2
@@ -75,7 +75,7 @@
             this.guna2GradientPanel2.Controls.Add(this.guna2Button5);
             this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 2);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(368, 741);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(368, 789);
             this.guna2GradientPanel2.TabIndex = 50;
             // 
             // guna2Button1
@@ -250,20 +250,20 @@
             this.label2.TabIndex = 51;
             this.label2.Text = "Reportes de Citas";
             // 
-            // dtpBuscarFecha
+            // dtpFecha
             // 
-            this.dtpBuscarFecha.AutoRoundedCorners = true;
-            this.dtpBuscarFecha.Checked = true;
-            this.dtpBuscarFecha.FillColor = System.Drawing.Color.White;
-            this.dtpBuscarFecha.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpBuscarFecha.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpBuscarFecha.Location = new System.Drawing.Point(399, 170);
-            this.dtpBuscarFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpBuscarFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpBuscarFecha.Name = "dtpBuscarFecha";
-            this.dtpBuscarFecha.Size = new System.Drawing.Size(212, 36);
-            this.dtpBuscarFecha.TabIndex = 53;
-            this.dtpBuscarFecha.Value = new System.DateTime(2026, 9, 24, 0, 45, 37, 9);
+            this.dtpFecha.AutoRoundedCorners = true;
+            this.dtpFecha.Checked = true;
+            this.dtpFecha.FillColor = System.Drawing.Color.White;
+            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpFecha.Location = new System.Drawing.Point(399, 170);
+            this.dtpFecha.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFecha.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(212, 61);
+            this.dtpFecha.TabIndex = 53;
+            this.dtpFecha.Value = new System.DateTime(2026, 9, 24, 0, 45, 37, 9);
             // 
             // label8
             // 
@@ -349,7 +349,7 @@
             // 
             this.txtNombre.AutoRoundedCorners = true;
             this.txtNombre.BorderColor = System.Drawing.Color.Black;
-            this.txtNombre.BorderRadius = 17;
+            this.txtNombre.BorderRadius = 29;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
             this.txtNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -364,89 +364,68 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PlaceholderText = "";
             this.txtNombre.SelectedText = "";
-            this.txtNombre.Size = new System.Drawing.Size(211, 36);
+            this.txtNombre.Size = new System.Drawing.Size(206, 61);
             this.txtNombre.TabIndex = 59;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.label17);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.guna2PictureBox2);
+            this.panel1.Controls.Add(this.cmbAgrupar);
+            this.panel1.Controls.Add(this.chartCitas);
             this.panel1.Location = new System.Drawing.Point(399, 309);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(367, 312);
+            this.panel1.Size = new System.Drawing.Size(382, 408);
             this.panel1.TabIndex = 60;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(280, 266);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(47, 25);
-            this.label19.TabIndex = 4;
-            this.label19.Text = "10%";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(174, 266);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(47, 25);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "35%";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(70, 266);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(47, 25);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "55%";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(28, 25);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(140, 25);
-            this.label16.TabIndex = 1;
-            this.label16.Text = "Citas Por Estado";
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::PROYECTO.Properties.Resources.Captura_de_pantalla_2026_09_23_2356571;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(75, 63);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(270, 181);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 0;
-            this.guna2PictureBox2.TabStop = false;
             // 
             // dgvReportesCitasybuscralacita
             // 
             this.dgvReportesCitasybuscralacita.BackgroundColor = System.Drawing.Color.White;
             this.dgvReportesCitasybuscralacita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReportesCitasybuscralacita.Location = new System.Drawing.Point(803, 309);
+            this.dgvReportesCitasybuscralacita.Location = new System.Drawing.Point(805, 309);
             this.dgvReportesCitasybuscralacita.Name = "dgvReportesCitasybuscralacita";
             this.dgvReportesCitasybuscralacita.RowHeadersWidth = 62;
             this.dgvReportesCitasybuscralacita.RowTemplate.Height = 28;
-            this.dgvReportesCitasybuscralacita.Size = new System.Drawing.Size(520, 312);
+            this.dgvReportesCitasybuscralacita.Size = new System.Drawing.Size(520, 408);
             this.dgvReportesCitasybuscralacita.TabIndex = 61;
+            // 
+            // chartCitas
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chartCitas.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartCitas.Legends.Add(legend1);
+            this.chartCitas.Location = new System.Drawing.Point(20, 77);
+            this.chartCitas.Name = "chartCitas";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartCitas.Series.Add(series1);
+            this.chartCitas.Size = new System.Drawing.Size(337, 313);
+            this.chartCitas.TabIndex = 2;
+            this.chartCitas.Text = "chart1";
+            // 
+            // cmbAgrupar
+            // 
+            this.cmbAgrupar.AutoRoundedCorners = true;
+            this.cmbAgrupar.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAgrupar.BorderColor = System.Drawing.Color.Black;
+            this.cmbAgrupar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbAgrupar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAgrupar.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbAgrupar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbAgrupar.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbAgrupar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbAgrupar.ItemHeight = 30;
+            this.cmbAgrupar.Location = new System.Drawing.Point(91, 16);
+            this.cmbAgrupar.Name = "cmbAgrupar";
+            this.cmbAgrupar.Size = new System.Drawing.Size(206, 36);
+            this.cmbAgrupar.TabIndex = 62;
             // 
             // FrmVerReportesCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1348, 742);
+            this.ClientSize = new System.Drawing.Size(1348, 793);
             this.Controls.Add(this.dgvReportesCitasybuscralacita);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtNombre);
@@ -455,7 +434,7 @@
             this.Controls.Add(this.btnExportarPDF);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpBuscarFecha);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.guna2GradientPanel2);
@@ -466,9 +445,8 @@
             this.guna2GradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReportesCitasybuscralacita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,7 +465,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpBuscarFecha;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2ComboBox cmbEstado;
@@ -496,11 +474,8 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtNombre;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.DataGridView dgvReportesCitasybuscralacita;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCitas;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbAgrupar;
     }
 }

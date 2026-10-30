@@ -1,10 +1,14 @@
-﻿using System;
+﻿using Capa_Datos;
+using Capa_Entidad;
+using Capoa_Entidad;
+using PROYECTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PROYECTO
+namespace Capa_Negocio
 {
     public class ServicioReportes
     {
@@ -74,6 +78,67 @@ namespace PROYECTO
                 { EstadosCita.Atendida,  citas.Count(c => c.Estado == EstadosCita.Atendida) },
                 { EstadosCita.Cancelar, citas.Count(c => c.Estado == EstadosCita.Cancelar) }
             };
+        }
+        public Dictionary<int, string> NombresDePacientes()
+        {
+            return pacienteRepo.ListarTodos()
+                .ToDictionary(p => p.id_paciente, p => p.Nombre + " " + p.Apellido);
+        }
+
+        public Dictionary<int, string> NombresDeMedicos()
+        {
+            return medicoRepo.ListarTodos()
+                .ToDictionary(m => m.id_Medico, m => m.Nombre + " " + m.Apellido);
+        }
+
+        // fecha = null: todas las fechas. estado = null: todos. nombre: busca en paciente o médico
+        public List<Cita> BuscarCitas(Administrador admin, DateTime? fecha, string estado, string nombre)
+        {
+            List<Cita> citas = GenerarReporteCitas(admin, fecha, fecha, estado);
+
+            string buscado = (nombre ?? "").Trim().ToLower();
+            if (buscado == "") return citas;
+
+            Dictionary<int, string> pac = NombresDePacientes();
+            Dictionary<int, string> med = NombresDeMedicos();
+
+            return citas.Where(c =>
+                (pac.ContainsKey(c.id_paciente) && pac[c.id_paciente].ToLower().Contains(buscado)) ||
+                (med.ContainsKey(c.id_Medico) && med[c.id_Medico].ToLower().Contains(buscado))
+            ).ToList();
+        }
+        // agrupar = "Mes" o "Día". Devuelve etiqueta → cantidad de citas
+        public Dictionary<string, int> CitasPorPeriodo(Administrador admin, string agrupar,
+            DateTime? referencia, string estado, string nombre, out string titulo)
+        {
+            List<Cita> citas = BuscarCitas(admin, null, estado, nombre);   // sin filtro de fecha
+            Dictionary<string, int> resultado = new Dictionary<string, int>();
+            titulo = "Citas por mes";
+
+            if (citas.Count == 0) return resultado;
+
+            if (agrupar == "Mes")
+            {
+                foreach (var grupo in citas
+                    .GroupBy(c => new DateTime(c.Fecha.Year, c.Fecha.Month, 1))
+                    .OrderBy(g => g.Key))
+                {
+                    resultado[grupo.Key.ToString("MMM yyyy")] = grupo.Count();
+                }
+                return resultado;
+            }
+
+            // Por día: todos los días del mes de referencia, también los que tienen 0
+            DateTime mes = referencia ?? citas.Max(c => c.Fecha);
+            titulo = "Citas por día - " + mes.ToString("MMMM yyyy");
+
+            int dias = DateTime.DaysInMonth(mes.Year, mes.Month);
+            for (int d = 1; d <= dias; d++)
+            {
+                DateTime dia = new DateTime(mes.Year, mes.Month, d);
+                resultado[d.ToString("00")] = citas.Count(c => c.Fecha.Date == dia);
+            }
+            return resultado;
         }
     }
 }

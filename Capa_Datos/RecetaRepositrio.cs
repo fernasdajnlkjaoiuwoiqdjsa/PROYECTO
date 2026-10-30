@@ -4,6 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Capa_Datos;
+using Capa_Entidad;
+
 
 namespace PROYECTO
 {

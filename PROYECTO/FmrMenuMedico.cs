@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using Capa_Entidad;   // Medico, Cita, Paciente, Usuario, Administrador, Especialidad
+using Capa_Negocio;
+using Capa_Datos;// ServicioCitas, ServicioAutenticacion, ServicioReportes
 
 namespace PROYECTO
 {
@@ -17,6 +20,8 @@ namespace PROYECTO
         {
             Medico med = Sesion.UsuarioActual as Medico;
             if (med == null) return;
+            lblMenuMedico.Text = "Bienvenido, " + med.Username;
+
 
             try
             {
@@ -197,6 +202,12 @@ namespace PROYECTO
             FrmAtenderCita frmPaciente = new FrmAtenderCita();
             frmPaciente.Show();
             this.Hide();
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            Sesion.CerrarYVolverAlLogin();
+
         }
     }
 }

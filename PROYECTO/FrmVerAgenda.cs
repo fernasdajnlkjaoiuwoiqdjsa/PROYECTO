@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Capa_Entidad;   // Medico, Cita, Paciente, Usuario, Administrador, Especialidad
+using Capa_Negocio;
+using Capa_Datos;// ServicioCitas, ServicioAutenticacion, ServicioReportes
 
 namespace PROYECTO
 {
@@ -108,5 +111,11 @@ namespace PROYECTO
             this.Hide();
         }
         private void FrmVerAgenda_Load(object sender, EventArgs e) { }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Sesion.CerrarYVolverAlLogin();
+
+        }
     }
 }

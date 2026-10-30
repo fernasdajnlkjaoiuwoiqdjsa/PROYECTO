@@ -36,7 +36,7 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMenuPaciente = new System.Windows.Forms.Label();
             this.panelAtendidas = new Guna.UI2.WinForms.Guna2Panel();
             this.lblTarjetaAtendidas = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -158,6 +158,7 @@
             this.guna2Button2.TabIndex = 4;
             this.guna2Button2.Text = "Cerrar Sesion";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 
@@ -201,16 +202,16 @@
             this.guna2Button5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
-            // label2
+            // lblMenuPaciente
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(416, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(290, 45);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Bienvenida, Maria";
+            this.lblMenuPaciente.AutoSize = true;
+            this.lblMenuPaciente.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuPaciente.ForeColor = System.Drawing.Color.Black;
+            this.lblMenuPaciente.Location = new System.Drawing.Point(416, 48);
+            this.lblMenuPaciente.Name = "lblMenuPaciente";
+            this.lblMenuPaciente.Size = new System.Drawing.Size(290, 45);
+            this.lblMenuPaciente.TabIndex = 9;
+            this.lblMenuPaciente.Text = "Bienvenida, Maria";
             // 
             // panelAtendidas
             // 
@@ -521,7 +522,7 @@
             this.Controls.Add(this.panelAtendidas);
             this.Controls.Add(this.panelPendientes);
             this.Controls.Add(this.panelCitasHoy);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblMenuPaciente);
             this.Controls.Add(this.guna2GradientPanel2);
             this.Name = "FrmMenuPacient";
             this.Text = "FrmMenuPacient";
@@ -548,7 +549,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMenuPaciente;
         private Guna.UI2.WinForms.Guna2Panel panelAtendidas;
         private System.Windows.Forms.Label lblTarjetaAtendidas;
         private System.Windows.Forms.Label label8;

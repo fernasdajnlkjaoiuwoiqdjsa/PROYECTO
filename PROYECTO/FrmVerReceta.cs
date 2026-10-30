@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using Capa_Entidad;   // Medico, Cita, Paciente, Usuario, Administrador, Especialidad
+using Capa_Negocio;
+using Capa_Datos;// ServicioCitas, ServicioAutenticacion, ServicioReportes
 
 namespace PROYECTO
 {
@@ -233,6 +236,12 @@ namespace PROYECTO
             }
 
             e.HasMorePages = false;
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Sesion.CerrarYVolverAlLogin();
+
         }
     }
 }

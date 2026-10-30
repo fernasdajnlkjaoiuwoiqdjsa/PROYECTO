@@ -4,9 +4,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Capa_Entidad;
+using PROYECTO;
 
-namespace PROYECTO
+namespace Capa_Datos
 {
     public class UsuarioRepositorio:IRepositorio<Usuario>
     {

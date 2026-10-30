@@ -53,12 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs" />
-    <Compile Include="Cita.cs" />
-    <Compile Include="CitaRepositorio.cs" />
-    <Compile Include="ConexionBD.cs" />
-    <Compile Include="EspcilaidadRepositorio.cs" />
-    <Compile Include="Especialidad.cs" />
     <Compile Include="FmrMenuMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,9 +113,6 @@
     <Compile Include="FrmMenuPacient.Designer.cs">
       <DependentUpon>FrmMenuPacient.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMenuPaciente.Agendar.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmPacientesAtendidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,28 +137,16 @@
     <Compile Include="FrmVerReportesCitas.Designer.cs">
       <DependentUpon>FrmVerReportesCitas.cs</DependentUpon>
     </Compile>
-    <Compile Include="IRepositorio.cs" />
-    <Compile Include="Medico.cs" />
-    <Compile Include="MedicoRepositorio.cs" />
-    <Compile Include="Paciente.cs" />
-    <Compile Include="PacienteRepositorio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Receta.cs" />
-    <Compile Include="RecetaRepositrio.cs" />
     <Compile Include="RoundedListBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="RoundedListBox.Designer.cs">
       <DependentUpon>RoundedListBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="ServicioAutenticacion.cs" />
-    <Compile Include="ServicioCitas.cs" />
-    <Compile Include="ServicioReportes.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="TextoLista.cs" />
-    <Compile Include="Usuario.cs" />
-    <Compile Include="UsuarioRepositorio.cs" />
     <EmbeddedResource Include="FmrMenuMedico.resx">
       <DependentUpon>FmrMenuMedico.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +308,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2026-09-24 001521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\mi_perfil %281%29.png" />
+    <None Include="Resources\mi_perfil %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capa_Datos\Capa_Datos.csproj">
+      <Project>{5b300d2b-5115-42ae-8a3c-47cdfa175c48}</Project>
+      <Name>Capa_Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Capa_Entidad\Capa_Entidad.csproj">
+      <Project>{589886b4-9c89-4380-940c-31d44ee3a46c}</Project>
+      <Name>Capa_Entidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Capa_Negocio\Capa_Negocio.csproj">
+      <Project>{1d14095b-4559-4c28-bf4f-ef347f916b01}</Project>
+      <Name>Capa_Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

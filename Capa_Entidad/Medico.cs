@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 
-namespace PROYECTO
+namespace Capa_Entidad
 {
     public class Medico:Usuario
     {

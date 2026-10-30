@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PROYECTO
+namespace Capa_Entidad
 {
     public static class EstadosCita
     {
