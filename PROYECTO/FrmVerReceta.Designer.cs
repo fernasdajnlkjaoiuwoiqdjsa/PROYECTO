@@ -316,6 +316,7 @@
             this.btnDscargar.Size = new System.Drawing.Size(157, 54);
             this.btnDscargar.TabIndex = 15;
             this.btnDscargar.Text = "Descargar";
+            this.btnDscargar.Click += new System.EventHandler(this.btnDscargar_Click);
             // 
             // FrmVerReceta
             // 

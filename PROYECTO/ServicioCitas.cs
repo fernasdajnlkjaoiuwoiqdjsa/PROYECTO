@@ -181,6 +181,34 @@ namespace PROYECTO
             Especialidad esp = especialidadRepo.Buscarr(m.id_especialidad);
             return m.Nombre + " " + m.Apellido + (esp != null ? " · " + esp.NombreEspecialidad : "");
         }
+        private List<Cita> CitasDeMedico(Medico medico)
+        {
+            if (medico == null) throw new ArgumentNullException(nameof(medico));
+            return citaRepo.ListarPorMedico(medico.id_Medico);
+        }
 
+        // Números de las 3 tarjetas del dashboard del médico
+        public Dictionary<string, int> ResumenMedico(Medico medico)
+        {
+            List<Cita> citas = CitasDeMedico(medico);
+            DateTime hoy = DateTime.Today;
+
+            return new Dictionary<string, int>
+    {
+        { "CitasHoy",     citas.Count(c => c.Fecha.Date == hoy && c.Estado != EstadosCita.Cancelar) },
+        { "Pendientes",   citas.Count(c => c.Estado == EstadosCita.Pendiente && c.Fecha.Date >= hoy) },
+        { "AtendidasHoy", citas.Count(c => c.Fecha.Date == hoy && c.Estado == EstadosCita.Atendida) }
+    };
+        }
+
+        // Próximas citas pendientes de hoy en adelante, ordenadas por fecha y hora
+        public List<Cita> ProximasCitasMedico(Medico medico, int max)
+        {
+            return CitasDeMedico(medico)
+                .Where(c => c.Estado == EstadosCita.Pendiente && c.Fecha.Date >= DateTime.Today)
+                .OrderBy(c => c.Fecha.Date + c.Hora.TimeOfDay)
+                .Take(max)
+                .ToList();
+        }
     }
 }

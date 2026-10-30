@@ -281,5 +281,11 @@ namespace PROYECTO
         {
 
         }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            Sesion.CerrarYVolverAlLogin();
+
+        }
     }
 }

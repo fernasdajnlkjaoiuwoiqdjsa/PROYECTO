@@ -7,15 +7,78 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 
 namespace PROYECTO
 {
     public partial class FmrMenuMedico : Form
     {
+        private void CargarDashboardMedico()
+        {
+            Medico med = Sesion.UsuarioActual as Medico;
+            if (med == null) return;
+
+            try
+            {
+                ServicioCitas servicio = new ServicioCitas();
+
+                // Tarjetas
+                Dictionary<string, int> r = servicio.ResumenMedico(med);
+                lblTarjetaHoy.Text = r["CitasHoy"].ToString();
+                lblTarjetaPendientes.Text = r["Pendientes"].ToString();
+                lblTarjetaAtendidasHoy.Text = r["AtendidasHoy"].ToString();
+
+                // Próximas citas: una fila por cita pendiente
+                Control[] textos = { lblCita1, lblCita2, lblCita3 };
+                Guna2Button[] estados = { btnEstado1, btnEstado2, btnEstado3 };
+
+                List<Cita> proximas = servicio.ProximasCitasMedico(med, textos.Length);
+                Dictionary<int, string> pacientes = servicio.NombresDePacientes();
+
+                for (int i = 0; i < textos.Length; i++)
+                {
+                    if (i < proximas.Count)
+                    {
+                        Cita c = proximas[i];
+                        string nombre = pacientes.ContainsKey(c.id_paciente) ? pacientes[c.id_paciente] : "Paciente";
+                        string dia = c.Fecha.Date == DateTime.Today ? "" : c.Fecha.ToString("dd/MM") + " ";
+
+                        textos[i].Text = dia + c.Hora.ToString("h:mm tt") + " - " + nombre;
+                        textos[i].Visible = true;
+
+                        estados[i].Text = c.Estado;
+                        estados[i].FillColor = Color.FromArgb(255, 228, 181);
+                        estados[i].ForeColor = Color.FromArgb(120, 80, 0);
+                        estados[i].HoverState.FillColor = Color.FromArgb(255, 228, 181);
+                        estados[i].Visible = true;
+                    }
+                    else
+                    {
+                        textos[i].Visible = false;
+                        estados[i].Visible = false;
+                    }
+                }
+
+                if (proximas.Count == 0)
+                {
+                    textos[0].Text = "No tienes citas pendientes.";
+                    textos[0].Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No se pudo cargar el dashboard");
+            }
+        }
         public FmrMenuMedico()
         {
             InitializeComponent();
 
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            CargarDashboardMedico();
         }
 
         private void Guna2Button1_Click(object sender, EventArgs e)

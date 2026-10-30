@@ -43,9 +43,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnLimpiar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.dgvGestionarEspecialidad = new System.Windows.Forms.DataGridView();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionarEspecialidad)).BeginInit();
@@ -54,6 +54,7 @@
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.Controls.Add(this.guna2Button6);
             this.guna2GradientPanel2.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel2.Controls.Add(this.label6);
             this.guna2GradientPanel2.Controls.Add(this.label1);
@@ -282,7 +283,7 @@
             this.btnLimpiar.FillColor = System.Drawing.Color.Gray;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(1171, 183);
+            this.btnLimpiar.Location = new System.Drawing.Point(1044, 183);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.PressedColor = System.Drawing.Color.BurlyWood;
             this.btnLimpiar.Size = new System.Drawing.Size(124, 57);
@@ -300,29 +301,12 @@
             this.btnEliminar.FillColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(1029, 183);
+            this.btnEliminar.Location = new System.Drawing.Point(891, 183);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(124, 57);
             this.btnEliminar.TabIndex = 55;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.AutoRoundedCorners = true;
-            this.btnEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(159)))), ((int)(((byte)(39)))));
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(880, 183);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(124, 57);
-            this.btnEditar.TabIndex = 54;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -349,21 +333,41 @@
             this.dgvGestionarEspecialidad.Name = "dgvGestionarEspecialidad";
             this.dgvGestionarEspecialidad.RowHeadersWidth = 62;
             this.dgvGestionarEspecialidad.RowTemplate.Height = 28;
-            this.dgvGestionarEspecialidad.Size = new System.Drawing.Size(794, 400);
+            this.dgvGestionarEspecialidad.Size = new System.Drawing.Size(758, 400);
             this.dgvGestionarEspecialidad.TabIndex = 57;
             this.dgvGestionarEspecialidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestionarEspecialidad_CellClick);
             this.dgvGestionarEspecialidad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGestionarEspecialidad_CellContentClick);
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.BackColor = System.Drawing.Color.MintCream;
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.White;
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button6.Image = global::PROYECTO.Properties.Resources.usuarios;
+            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button6.Location = new System.Drawing.Point(11, 586);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.guna2Button6.Size = new System.Drawing.Size(351, 68);
+            this.guna2Button6.TabIndex = 11;
+            this.guna2Button6.Text = "Cerrar Sesion";
+            this.guna2Button6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // FrmGestionarEspecialidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1307, 750);
+            this.ClientSize = new System.Drawing.Size(1256, 750);
             this.Controls.Add(this.dgvGestionarEspecialidad);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNombreEspacilidad);
             this.Controls.Add(this.label3);
@@ -398,8 +402,8 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btnLimpiar;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
-        private Guna.UI2.WinForms.Guna2Button btnEditar;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private System.Windows.Forms.DataGridView dgvGestionarEspecialidad;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
     }
 }

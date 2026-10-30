@@ -15,6 +15,15 @@ namespace PROYECTO
         public frmLogin()
         {
             InitializeComponent();
+            this.VisibleChanged += (s, ev) =>
+            {
+                if (Visible)
+                {
+                    txtUsuario.Clear();
+                    txtContraseña.Clear();
+                    txtUsuario.Focus();
+                }
+            };
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -33,6 +42,7 @@ namespace PROYECTO
                 }
 
                 Sesion.UsuarioActual = u;
+                Sesion.VentanaLogin = this;
 
                 Form menu;
                 if (u is Paciente) menu = new FrmMenuPacient();

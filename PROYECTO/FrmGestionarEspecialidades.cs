@@ -151,5 +151,10 @@ namespace PROYECTO
             txtNombreEspacilidad.Focus();
         }
 
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            Sesion.CerrarYVolverAlLogin();
+
+        }
     }
 }

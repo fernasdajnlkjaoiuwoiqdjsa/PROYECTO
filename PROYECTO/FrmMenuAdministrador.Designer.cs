@@ -35,6 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,12 +65,11 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ChartEstado = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label16 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
-            this.ChartEstado = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartEspecialidad = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.label23 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelAtendidas.SuspendLayout();
@@ -79,8 +79,8 @@
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartEstado)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartEspecialidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,6 +101,27 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(365, 945);
             this.guna2GradientPanel2.TabIndex = 11;
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.BackColor = System.Drawing.Color.MintCream;
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.White;
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button6.Image = global::PROYECTO.Properties.Resources.usuarios;
+            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button6.Location = new System.Drawing.Point(11, 586);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.guna2Button6.Size = new System.Drawing.Size(354, 68);
+            this.guna2Button6.TabIndex = 10;
+            this.guna2Button6.Text = "Cerrar Sesion";
+            this.guna2Button6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // guna2Button1
             // 
@@ -481,6 +502,22 @@
             this.panel1.Size = new System.Drawing.Size(447, 401);
             this.panel1.TabIndex = 19;
             // 
+            // ChartEstado
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.ChartEstado.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChartEstado.Legends.Add(legend1);
+            this.ChartEstado.Location = new System.Drawing.Point(55, 70);
+            this.ChartEstado.Name = "ChartEstado";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ChartEstado.Series.Add(series1);
+            this.ChartEstado.Size = new System.Drawing.Size(332, 315);
+            this.ChartEstado.TabIndex = 5;
+            this.ChartEstado.Text = "chart1";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -500,34 +537,6 @@
             this.panel2.Size = new System.Drawing.Size(447, 401);
             this.panel2.TabIndex = 20;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(28, 25);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(185, 25);
-            this.label23.TabIndex = 1;
-            this.label23.Text = "Citas por especialidad";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label23.Click += new System.EventHandler(this.label23_Click);
-            // 
-            // ChartEstado
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.ChartEstado.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartEstado.Legends.Add(legend1);
-            this.ChartEstado.Location = new System.Drawing.Point(55, 70);
-            this.ChartEstado.Name = "ChartEstado";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ChartEstado.Series.Add(series1);
-            this.ChartEstado.Size = new System.Drawing.Size(332, 315);
-            this.ChartEstado.TabIndex = 5;
-            this.ChartEstado.Text = "chart1";
-            // 
             // chartEspecialidad
             // 
             chartArea2.Name = "ChartArea1";
@@ -544,25 +553,17 @@
             this.chartEspecialidad.TabIndex = 5;
             this.chartEspecialidad.Text = "chart2";
             // 
-            // guna2Button6
+            // label23
             // 
-            this.guna2Button6.BackColor = System.Drawing.Color.MintCream;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.White;
-            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button6.Image = global::PROYECTO.Properties.Resources.usuarios;
-            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button6.Location = new System.Drawing.Point(11, 586);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.guna2Button6.Size = new System.Drawing.Size(354, 68);
-            this.guna2Button6.TabIndex = 10;
-            this.guna2Button6.Text = "Cerrar Sesion";
-            this.guna2Button6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(28, 25);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(185, 25);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Citas por especialidad";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // FrmMenuAdministrador
             // 
@@ -600,9 +601,9 @@
             this.guna2Panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartEstado)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ChartEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartEspecialidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
