@@ -131,7 +131,56 @@ namespace PROYECTO
         {
             return pacienteRepo.Buscarr(idPaciente);
         }
+        // Citas atendidas con receta, de la más reciente a la más antigua
+        public List<Cita> RecetasDePaciente(Paciente paciente)
+        {
+            return HistorialPaciente(paciente)
+                .Where(c => c.Estado == EstadosCita.Atendida && c.Receta != null)
+                .ToList();
+        }
 
+        public string NombreMedico(int idMedico)
+        {
+            Medico m = medicoRepo.Buscarr(idMedico);
+            return m == null ? "" : m.Nombre + " " + m.Apellido;
+        }
+
+        // id_Medico → "Nombre Apellido"
+        public Dictionary<int, string> NombresDeMedicos()
+        {
+            return medicoRepo.ListarTodos()
+                .ToDictionary(m => m.id_Medico, m => m.Nombre + " " + m.Apellido);
+        }
+        // Próxima cita pendiente que todavía no ha pasado
+        public Cita ProximaCita(Paciente paciente)
+        {
+            return HistorialPaciente(paciente)
+                .Where(c => c.Estado == EstadosCita.Pendiente
+                         && c.Fecha.Date + c.Hora.TimeOfDay >= DateTime.Now)
+                .OrderBy(c => c.Fecha.Date + c.Hora.TimeOfDay)
+                .FirstOrDefault();
+        }
+
+        // La cita más reciente (el historial ya viene de la más nueva a la más antigua)
+        public Cita UltimaCita(Paciente paciente)
+        {
+            return HistorialPaciente(paciente).FirstOrDefault();
+        }
+
+        public int CantidadCitas(Paciente paciente, string estado)
+        {
+            return HistorialPaciente(paciente).Count(c => c.Estado == estado);
+        }
+
+        // "Nombre Apellido · Especialidad"
+        public string DescripcionMedico(int idMedico)
+        {
+            Medico m = medicoRepo.Buscarr(idMedico);
+            if (m == null) return "";
+
+            Especialidad esp = especialidadRepo.Buscarr(m.id_especialidad);
+            return m.Nombre + " " + m.Apellido + (esp != null ? " · " + esp.NombreEspecialidad : "");
+        }
 
     }
 }

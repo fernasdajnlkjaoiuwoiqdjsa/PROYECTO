@@ -32,7 +32,6 @@
             this.txtBuscar = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLimpiar = new Guna.UI2.WinForms.Guna2Button();
             this.btnEliminar = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEditar = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuardar = new Guna.UI2.WinForms.Guna2Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCorreo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -109,7 +108,7 @@
             this.btnLimpiar.FillColor = System.Drawing.Color.Gray;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(1050, 539);
+            this.btnLimpiar.Location = new System.Drawing.Point(973, 530);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.PressedColor = System.Drawing.Color.BurlyWood;
             this.btnLimpiar.Size = new System.Drawing.Size(156, 57);
@@ -126,27 +125,11 @@
             this.btnEliminar.FillColor = System.Drawing.Color.Red;
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(863, 539);
+            this.btnEliminar.Location = new System.Drawing.Point(782, 530);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(156, 57);
             this.btnEliminar.TabIndex = 43;
             this.btnEliminar.Text = "Eliminar";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.AutoRoundedCorners = true;
-            this.btnEditar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(159)))), ((int)(((byte)(39)))));
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(674, 539);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(156, 57);
-            this.btnEditar.TabIndex = 42;
-            this.btnEditar.Text = "Editar";
             // 
             // btnGuardar
             // 
@@ -158,7 +141,7 @@
             this.btnGuardar.FillColor = System.Drawing.Color.DarkGreen;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(489, 539);
+            this.btnGuardar.Location = new System.Drawing.Point(588, 530);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(156, 57);
             this.btnGuardar.TabIndex = 41;
@@ -504,7 +487,7 @@
             this.cmbEspecialidad.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbEspecialidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbEspecialidad.ItemHeight = 30;
-            this.cmbEspecialidad.Location = new System.Drawing.Point(482, 475);
+            this.cmbEspecialidad.Location = new System.Drawing.Point(482, 458);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(755, 36);
             this.cmbEspecialidad.TabIndex = 48;
@@ -589,7 +572,6 @@
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtCorreo);
@@ -619,7 +601,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtBuscar;
         private Guna.UI2.WinForms.Guna2Button btnLimpiar;
         private Guna.UI2.WinForms.Guna2Button btnEliminar;
-        private Guna.UI2.WinForms.Guna2Button btnEditar;
         private Guna.UI2.WinForms.Guna2Button btnGuardar;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2TextBox txtCorreo;

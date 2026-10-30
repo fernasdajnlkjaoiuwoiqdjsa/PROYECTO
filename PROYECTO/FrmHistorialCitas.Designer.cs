@@ -227,6 +227,7 @@
             this.Controls.Add(this.guna2GradientPanel2);
             this.Name = "FrmHistorialCitas";
             this.Text = "FrmHistorialCitas";
+            this.Load += new System.EventHandler(this.FrmHistorialCitas_Load);
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

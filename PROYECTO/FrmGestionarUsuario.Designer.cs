@@ -46,6 +46,7 @@
             this.btnActivar = new Guna.UI2.WinForms.Guna2Button();
             this.dgvGestionarUsuarios = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionarUsuarios)).BeginInit();
@@ -54,6 +55,7 @@
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.Controls.Add(this.guna2Button6);
             this.guna2GradientPanel2.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel2.Controls.Add(this.label6);
             this.guna2GradientPanel2.Controls.Add(this.label1);
@@ -357,6 +359,26 @@
             this.btnBuscar.TabIndex = 60;
             this.btnBuscar.Text = "Buscar";
             // 
+            // guna2Button6
+            // 
+            this.guna2Button6.BackColor = System.Drawing.Color.MintCream;
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.White;
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button6.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button6.Image = global::PROYECTO.Properties.Resources.usuarios;
+            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button6.Location = new System.Drawing.Point(11, 583);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.guna2Button6.Size = new System.Drawing.Size(351, 68);
+            this.guna2Button6.TabIndex = 10;
+            this.guna2Button6.Text = "Cerrar Sesion";
+            this.guna2Button6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
             // FrmGestionarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -404,5 +426,6 @@
         private Guna.UI2.WinForms.Guna2Button btnActivar;
         private System.Windows.Forms.DataGridView dgvGestionarUsuarios;
         private Guna.UI2.WinForms.Guna2Button btnBuscar;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
     }
 }

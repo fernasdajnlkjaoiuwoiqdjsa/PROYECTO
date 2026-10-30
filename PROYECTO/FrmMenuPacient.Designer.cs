@@ -38,19 +38,18 @@
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelAtendidas = new Guna.UI2.WinForms.Guna2Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblTarjetaAtendidas = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panelPendientes = new Guna.UI2.WinForms.Guna2Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTarjetaPendientes = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelCitasHoy = new Guna.UI2.WinForms.Guna2Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTarjetaProxima = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btnEstadoCita = new Guna.UI2.WinForms.Guna2Button();
+            this.lblProximaCitaTitulo = new System.Windows.Forms.Label();
+            this.lblProximaCitaMedico = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -157,7 +156,7 @@
             this.guna2Button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.guna2Button2.Size = new System.Drawing.Size(366, 68);
             this.guna2Button2.TabIndex = 4;
-            this.guna2Button2.Text = "Mi Perfil";
+            this.guna2Button2.Text = "Cerrar Sesion";
             this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // guna2Button3
@@ -217,23 +216,23 @@
             // 
             this.panelAtendidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(158)))), ((int)(((byte)(117)))));
             this.panelAtendidas.BorderRadius = 10;
-            this.panelAtendidas.Controls.Add(this.label7);
+            this.panelAtendidas.Controls.Add(this.lblTarjetaAtendidas);
             this.panelAtendidas.Controls.Add(this.label8);
             this.panelAtendidas.Location = new System.Drawing.Point(995, 149);
             this.panelAtendidas.Name = "panelAtendidas";
             this.panelAtendidas.Size = new System.Drawing.Size(264, 142);
             this.panelAtendidas.TabIndex = 13;
             // 
-            // label7
+            // lblTarjetaAtendidas
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(30, 83);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 48);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "2";
+            this.lblTarjetaAtendidas.AutoSize = true;
+            this.lblTarjetaAtendidas.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTarjetaAtendidas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTarjetaAtendidas.Location = new System.Drawing.Point(30, 83);
+            this.lblTarjetaAtendidas.Name = "lblTarjetaAtendidas";
+            this.lblTarjetaAtendidas.Size = new System.Drawing.Size(39, 48);
+            this.lblTarjetaAtendidas.TabIndex = 3;
+            this.lblTarjetaAtendidas.Text = "2";
             // 
             // label8
             // 
@@ -250,23 +249,23 @@
             // 
             this.panelPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(159)))), ((int)(((byte)(39)))));
             this.panelPendientes.BorderRadius = 80;
-            this.panelPendientes.Controls.Add(this.label5);
+            this.panelPendientes.Controls.Add(this.lblTarjetaPendientes);
             this.panelPendientes.Controls.Add(this.label3);
             this.panelPendientes.Location = new System.Drawing.Point(704, 149);
             this.panelPendientes.Name = "panelPendientes";
             this.panelPendientes.Size = new System.Drawing.Size(256, 142);
             this.panelPendientes.TabIndex = 12;
             // 
-            // label5
+            // lblTarjetaPendientes
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(20, 83);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 48);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "1";
+            this.lblTarjetaPendientes.AutoSize = true;
+            this.lblTarjetaPendientes.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTarjetaPendientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTarjetaPendientes.Location = new System.Drawing.Point(20, 83);
+            this.lblTarjetaPendientes.Name = "lblTarjetaPendientes";
+            this.lblTarjetaPendientes.Size = new System.Drawing.Size(39, 48);
+            this.lblTarjetaPendientes.TabIndex = 3;
+            this.lblTarjetaPendientes.Text = "1";
             // 
             // label3
             // 
@@ -283,23 +282,23 @@
             // 
             this.panelCitasHoy.BackColor = System.Drawing.Color.MediumOrchid;
             this.panelCitasHoy.BorderRadius = 19;
-            this.panelCitasHoy.Controls.Add(this.label4);
+            this.panelCitasHoy.Controls.Add(this.lblTarjetaProxima);
             this.panelCitasHoy.Controls.Add(this.label9);
             this.panelCitasHoy.Location = new System.Drawing.Point(410, 149);
             this.panelCitasHoy.Name = "panelCitasHoy";
             this.panelCitasHoy.Size = new System.Drawing.Size(256, 142);
             this.panelCitasHoy.TabIndex = 11;
             // 
-            // label4
+            // lblTarjetaProxima
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(20, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 48);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "22 sept";
+            this.lblTarjetaProxima.AutoSize = true;
+            this.lblTarjetaProxima.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTarjetaProxima.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTarjetaProxima.Location = new System.Drawing.Point(20, 83);
+            this.lblTarjetaProxima.Name = "lblTarjetaProxima";
+            this.lblTarjetaProxima.Size = new System.Drawing.Size(135, 48);
+            this.lblTarjetaProxima.TabIndex = 1;
+            this.lblTarjetaProxima.Text = "22 sept";
             // 
             // label9
             // 
@@ -315,63 +314,52 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BorderRadius = 10;
-            this.guna2Panel1.Controls.Add(this.guna2Button1);
-            this.guna2Panel1.Controls.Add(this.label12);
-            this.guna2Panel1.Controls.Add(this.label11);
-            this.guna2Panel1.Controls.Add(this.label10);
+            this.guna2Panel1.Controls.Add(this.btnEstadoCita);
+            this.guna2Panel1.Controls.Add(this.lblProximaCitaTitulo);
+            this.guna2Panel1.Controls.Add(this.lblProximaCitaMedico);
             this.guna2Panel1.Location = new System.Drawing.Point(424, 326);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(815, 104);
+            this.guna2Panel1.Size = new System.Drawing.Size(815, 92);
             this.guna2Panel1.TabIndex = 14;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
-            // guna2Button1
+            // btnEstadoCita
             // 
-            this.guna2Button1.AutoRoundedCorners = true;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Moccasin;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(675, 53);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(111, 33);
-            this.guna2Button1.TabIndex = 8;
-            this.guna2Button1.Text = "Pendiente";
+            this.btnEstadoCita.AutoRoundedCorners = true;
+            this.btnEstadoCita.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEstadoCita.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEstadoCita.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEstadoCita.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEstadoCita.FillColor = System.Drawing.Color.Moccasin;
+            this.btnEstadoCita.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEstadoCita.ForeColor = System.Drawing.Color.Black;
+            this.btnEstadoCita.Location = new System.Drawing.Point(667, 19);
+            this.btnEstadoCita.Name = "btnEstadoCita";
+            this.btnEstadoCita.Size = new System.Drawing.Size(138, 58);
+            this.btnEstadoCita.TabIndex = 8;
+            this.btnEstadoCita.Text = "Pendiente";
             // 
-            // label12
+            // lblProximaCitaTitulo
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(264, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(120, 28);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Odontologa";
+            this.lblProximaCitaTitulo.AutoSize = true;
+            this.lblProximaCitaTitulo.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProximaCitaTitulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblProximaCitaTitulo.Location = new System.Drawing.Point(20, 19);
+            this.lblProximaCitaTitulo.Name = "lblProximaCitaTitulo";
+            this.lblProximaCitaTitulo.Size = new System.Drawing.Size(101, 21);
+            this.lblProximaCitaTitulo.TabIndex = 5;
+            this.lblProximaCitaTitulo.Text = "Proxima Cita:";
             // 
-            // label11
+            // lblProximaCitaMedico
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(20, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 21);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Proxima Cita:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(19, 58);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(239, 28);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Dr. Alcira Guadalupe Lovo";
+            this.lblProximaCitaMedico.AutoSize = true;
+            this.lblProximaCitaMedico.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProximaCitaMedico.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblProximaCitaMedico.Location = new System.Drawing.Point(19, 49);
+            this.lblProximaCitaMedico.Name = "lblProximaCitaMedico";
+            this.lblProximaCitaMedico.Size = new System.Drawing.Size(58, 28);
+            this.lblProximaCitaMedico.TabIndex = 4;
+            this.lblProximaCitaMedico.Text = "Label";
             // 
             // label13
             // 
@@ -537,6 +525,7 @@
             this.Controls.Add(this.guna2GradientPanel2);
             this.Name = "FrmMenuPacient";
             this.Text = "FrmMenuPacient";
+            this.Load += new System.EventHandler(this.FrmMenuPacient_Load);
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -561,19 +550,18 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Panel panelAtendidas;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTarjetaAtendidas;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2Panel panelPendientes;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTarjetaPendientes;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Panel panelCitasHoy;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTarjetaProxima;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Label lblProximaCitaMedico;
+        private System.Windows.Forms.Label lblProximaCitaTitulo;
+        private Guna.UI2.WinForms.Guna2Button btnEstadoCita;
         private Guna.UI2.WinForms.Guna2Button guna2Button9;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;

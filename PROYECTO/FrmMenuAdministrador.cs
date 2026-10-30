@@ -7,11 +7,78 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PROYECTO
 {
     public partial class FrmMenuAdministrador : Form
     {
+        private readonly ServicioReportes servicioReportes = new ServicioReportes();
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            CargarDashboard();
+        }
+
+        private void CargarDashboard()
+        {
+            Administrador admin = Sesion.UsuarioActual as Administrador;
+            if (admin == null) return;
+
+            try
+            {
+                Dictionary<string, int> r = servicioReportes.ResumenAdministrador(admin);
+                lblTituloCitasHoy.Text = r["CitasHoy"].ToString();
+                label3.Text = r["Canceladas"].ToString();
+                label8.Text = r["Pendientes"].ToString();
+                label13.Text = r["Pacientes"].ToString();
+                label11.Text = r["MedicosActivos"].ToString();
+                label15.Text = r["Especialidades"].ToString();
+
+                // Orden de ReporteEstado: Pendiente, Atendida, Cancelada
+                DibujarPastel(ChartEstado,
+                    servicioReportes.ReporteEstado(admin, null, null),
+                    new[] { Color.FromArgb(240, 158, 38), Color.FromArgb(30, 158, 116), Color.FromArgb(217, 95, 45) });
+
+                DibujarPastel(chartEspecialidad,
+                    servicioReportes.ReporteEspecialidad(admin),
+                    new[] { Color.FromArgb(59, 139, 224), Color.FromArgb(142, 95, 217), Color.FromArgb(240, 158, 38),
+                    Color.FromArgb(30, 158, 116), Color.FromArgb(255, 105, 180), Color.FromArgb(217, 95, 45) });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No se pudo cargar el dashboard");
+            }
+        }
+
+        private void DibujarPastel(Chart chart, Dictionary<string, int> datos, Color[] colores)
+        {
+            chart.Series.Clear();
+            chart.ChartAreas.Clear();
+            chart.Legends.Clear();
+
+            int total = datos.Values.Sum();
+            if (total == 0) return;                       // sin citas todavía: gráfica vacía
+
+            chart.ChartAreas.Add(new ChartArea());
+            Series serie = new Series("datos") { ChartType = SeriesChartType.Pie };
+
+            int i = 0;
+            foreach (KeyValuePair<string, int> par in datos)
+            {
+                if (par.Value > 0)
+                {
+                    int idx = serie.Points.AddXY(par.Key, par.Value);
+                    serie.Points[idx].Color = colores[i % colores.Length];
+                    serie.Points[idx].LegendText = par.Key + " " + (int)Math.Round(par.Value * 100.0 / total) + "%";
+                }
+                i++;
+            }
+
+            chart.Series.Add(serie);
+            chart.Legends.Add(new Legend { Docking = Docking.Bottom });
+        }
         public FrmMenuAdministrador()
         {
             InitializeComponent();

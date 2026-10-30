@@ -12,6 +12,7 @@ namespace PROYECTO
 {
     public partial class FrmMenuPacient : Form
     {
+
         public FrmMenuPacient()
         {
             InitializeComponent();
@@ -41,6 +42,16 @@ namespace PROYECTO
             FrmMenuPacient frmPaciente = new FrmMenuPacient();
             frmPaciente.Show();
             this.Hide();
+        }
+
+        private void FrmMenuPacient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -25,8 +26,70 @@ namespace PROYECTO
             dtElgirFecha.MinDate = DateTime.Today;      //Fecha real no atrasada
             dtElgirFecha.Value = DateTime.Today;
             CargarEspecialidades();
+            CargarDashboardPaciente();
+        }
+        private void CargarDashboardPaciente()
+        {
+            Paciente pac = Sesion.UsuarioActual as Paciente;
+            if (pac == null) return;
+
+            try
+            {
+                ServicioCitas servicio = new ServicioCitas();
+
+                // Tarjetas
+                lblTarjetaPendientes.Text = servicio.CantidadCitas(pac, EstadosCita.Pendiente).ToString();
+                lblTarjetaAtendidas.Text = servicio.CantidadCitas(pac, EstadosCita.Atendida).ToString();
+
+                Cita proxima = servicio.ProximaCita(pac);
+                lblTarjetaProxima.Text = proxima != null ? proxima.Fecha.ToString("dd MMM") : "Ninguna";
+
+                // Bloque "Próxima cita": si no hay pendiente, muestra la última que tuvo
+                Cita mostrar = proxima ?? servicio.UltimaCita(pac);
+
+                if (mostrar == null)
+                {
+                    lblProximaCitaTitulo.Text = "Próxima Cita:";
+                    lblProximaCitaMedico.Text = "Todavía no tienes citas. Agenda una abajo.";
+                    btnEstadoCita.Visible = false;
+                    return;
+                }
+
+                lblProximaCitaTitulo.Text = proxima != null ? "Próxima Cita:" : "Última Cita:";
+                lblProximaCitaMedico.Text = servicio.DescripcionMedico(mostrar.id_Medico)
+                    + " · " + mostrar.Fecha.ToString("dd/MM/yyyy") + " " + mostrar.Hora.ToString("h:mm tt");
+
+                MostrarEstado(mostrar.Estado);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No se pudo cargar el dashboard");
+            }
         }
 
+        private void MostrarEstado(string estado)
+        {
+            Color fondo, texto;
+
+            if (estado == EstadosCita.Atendida)
+            {
+                fondo = Color.FromArgb(200, 240, 220); texto = Color.FromArgb(20, 110, 70);
+            }
+            else if (estado == EstadosCita.Cancelar)
+            {
+                fondo = Color.FromArgb(250, 210, 205); texto = Color.FromArgb(160, 40, 30);
+            }
+            else   // Pendiente
+            {
+                fondo = Color.FromArgb(255, 228, 181); texto = Color.FromArgb(120, 80, 0);
+            }
+
+            btnEstadoCita.Visible = true;
+            btnEstadoCita.Text = estado;
+            btnEstadoCita.FillColor = fondo;
+            btnEstadoCita.ForeColor = texto;
+            btnEstadoCita.HoverState.FillColor = fondo;   // que no cambie de color al pasar el mouse
+        }
         // 1) Especialidades desde la base de datos
         private void CargarEspecialidades()
         {

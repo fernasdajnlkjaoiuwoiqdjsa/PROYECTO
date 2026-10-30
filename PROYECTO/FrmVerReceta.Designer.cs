@@ -329,6 +329,7 @@
             this.Controls.Add(this.Paneldatosyreceta);
             this.Name = "FrmVerReceta";
             this.Text = "FrmVerReceta";
+            this.Load += new System.EventHandler(this.FrmVerReceta_Load);
             this.Paneldatosyreceta.ResumeLayout(false);
             this.Paneldatosyreceta.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
