@@ -37,18 +37,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dgvpacinetesenagendapendientes = new System.Windows.Forms.DataGridView();
             this.btnAtender = new Guna.UI2.WinForms.Guna2Button();
-            this.btnVer = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpacinetesenagendapendientes)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
@@ -112,7 +111,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(380, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(905, 88);
+            this.panel1.Size = new System.Drawing.Size(783, 88);
             this.panel1.TabIndex = 8;
             // 
             // label2
@@ -154,7 +153,7 @@
             this.dgvpacinetesenagendapendientes.Name = "dgvpacinetesenagendapendientes";
             this.dgvpacinetesenagendapendientes.RowHeadersWidth = 62;
             this.dgvpacinetesenagendapendientes.RowTemplate.Height = 28;
-            this.dgvpacinetesenagendapendientes.Size = new System.Drawing.Size(704, 381);
+            this.dgvpacinetesenagendapendientes.Size = new System.Drawing.Size(727, 381);
             this.dgvpacinetesenagendapendientes.TabIndex = 10;
             this.dgvpacinetesenagendapendientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -168,47 +167,16 @@
             this.btnAtender.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(138)))), ((int)(((byte)(221)))));
             this.btnAtender.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAtender.ForeColor = System.Drawing.Color.White;
-            this.btnAtender.Location = new System.Drawing.Point(1133, 250);
+            this.btnAtender.Location = new System.Drawing.Point(697, 657);
             this.btnAtender.Name = "btnAtender";
-            this.btnAtender.Size = new System.Drawing.Size(133, 43);
+            this.btnAtender.Size = new System.Drawing.Size(155, 55);
             this.btnAtender.TabIndex = 11;
             this.btnAtender.Text = "Atender";
-            // 
-            // btnVer
-            // 
-            this.btnVer.AutoRoundedCorners = true;
-            this.btnVer.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVer.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnVer.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnVer.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnVer.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(159)))), ((int)(((byte)(39)))));
-            this.btnVer.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnVer.ForeColor = System.Drawing.Color.White;
-            this.btnVer.Location = new System.Drawing.Point(1133, 321);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(133, 43);
-            this.btnVer.TabIndex = 12;
-            this.btnVer.Text = "Ver";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.AutoRoundedCorners = true;
-            this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCancelar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCancelar.FillColor = System.Drawing.Color.Red;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(1133, 397);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(133, 43);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
             // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.Controls.Add(this.guna2Button2);
             this.guna2GradientPanel2.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel2.Controls.Add(this.label6);
             this.guna2GradientPanel2.Controls.Add(this.label1);
@@ -219,7 +187,7 @@
             this.guna2GradientPanel2.Controls.Add(this.guna2Button5);
             this.guna2GradientPanel2.Location = new System.Drawing.Point(1, 2);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(383, 660);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(383, 752);
             this.guna2GradientPanel2.TabIndex = 14;
             // 
             // label6
@@ -243,6 +211,27 @@
             this.label1.Size = new System.Drawing.Size(171, 45);
             this.label1.TabIndex = 6;
             this.label1.Text = "SaludVital";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.Image = global::PROYECTO.Properties.Resources.mi_perfil__1_;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Location = new System.Drawing.Point(11, 519);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.guna2Button1.Size = new System.Drawing.Size(366, 57);
+            this.guna2Button1.TabIndex = 10;
+            this.guna2Button1.Text = "Cerrar Sesion";
+            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2PictureBox1
             // 
@@ -352,36 +341,33 @@
             this.guna2PictureBox2.TabIndex = 16;
             this.guna2PictureBox2.TabStop = false;
             // 
-            // guna2Button1
+            // guna2Button2
             // 
-            this.guna2Button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Image = global::PROYECTO.Properties.Resources.mi_perfil__1_;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(11, 456);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.guna2Button1.Size = new System.Drawing.Size(366, 57);
-            this.guna2Button1.TabIndex = 10;
-            this.guna2Button1.Text = "Cerrar Sesion";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.guna2Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Image = global::PROYECTO.Properties.Resources.icono_correo_64;
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.Location = new System.Drawing.Point(11, 456);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.guna2Button2.Size = new System.Drawing.Size(366, 57);
+            this.guna2Button2.TabIndex = 11;
+            this.guna2Button2.Text = "Recordatorio";
+            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // FrmVerAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1287, 661);
+            this.ClientSize = new System.Drawing.Size(1162, 747);
             this.Controls.Add(this.guna2GradientPanel2);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnVer);
             this.Controls.Add(this.btnAtender);
             this.Controls.Add(this.dgvpacinetesenagendapendientes);
             this.Controls.Add(this.label4);
@@ -413,8 +399,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvpacinetesenagendapendientes;
         private Guna.UI2.WinForms.Guna2Button btnAtender;
-        private Guna.UI2.WinForms.Guna2Button btnVer;
-        private Guna.UI2.WinForms.Guna2Button btnCancelar;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Label label6;
@@ -425,5 +409,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

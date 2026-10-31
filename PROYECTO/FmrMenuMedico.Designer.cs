@@ -57,6 +57,7 @@
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.btnEstado3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnEstado2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panelCitasHoy.SuspendLayout();
             this.panelPendientes.SuspendLayout();
             this.panelAtendidas.SuspendLayout();
@@ -268,6 +269,7 @@
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.Controls.Add(this.guna2Button2);
             this.guna2GradientPanel2.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel2.Controls.Add(this.label1);
             this.guna2GradientPanel2.Controls.Add(this.label14);
@@ -293,7 +295,7 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.Image = global::PROYECTO.Properties.Resources.mi_perfil__1_;
             this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(11, 453);
+            this.guna2Button1.Location = new System.Drawing.Point(11, 516);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.guna2Button1.Size = new System.Drawing.Size(366, 57);
@@ -453,6 +455,27 @@
             this.btnEstado2.TabIndex = 9;
             this.btnEstado2.Text = "Buttom";
             // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Image = global::PROYECTO.Properties.Resources.icono_correo_64;
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.Location = new System.Drawing.Point(11, 453);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.guna2Button2.Size = new System.Drawing.Size(366, 57);
+            this.guna2Button2.TabIndex = 10;
+            this.guna2Button2.Text = "Recordatorio";
+            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
+            // 
             // FmrMenuMedico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -522,5 +545,6 @@
         private Guna.UI2.WinForms.Guna2Button btnEstado3;
         private Guna.UI2.WinForms.Guna2Button btnEstado2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

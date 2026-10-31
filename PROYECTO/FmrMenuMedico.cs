@@ -209,5 +209,13 @@ namespace PROYECTO
             Sesion.CerrarYVolverAlLogin();
 
         }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+            FrmEnviarRecordatorio frmPaciente = new FrmEnviarRecordatorio();
+            frmPaciente.Show();
+            this.Hide();
+        }
     }
+    
 }

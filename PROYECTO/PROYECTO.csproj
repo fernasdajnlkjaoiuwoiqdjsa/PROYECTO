@@ -77,6 +77,12 @@
     <Compile Include="FrmAtenderCita.Designer.cs">
       <DependentUpon>FrmAtenderCita.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEnviarRecordatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEnviarRecordatorio.Designer.cs">
+      <DependentUpon>FrmEnviarRecordatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGestionarEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAtenderCita.resx">
       <DependentUpon>FrmAtenderCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEnviarRecordatorio.resx">
+      <DependentUpon>FrmEnviarRecordatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionarEspecialidades.resx">
       <DependentUpon>FrmGestionarEspecialidades.cs</DependentUpon>
@@ -310,6 +319,7 @@
     <None Include="Resources\Captura de pantalla 2026-09-24 001521.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icono_correo_64.png" />
     <Content Include="Resources\mi_perfil %281%29.png" />
     <None Include="Resources\mi_perfil %281%291.png" />
   </ItemGroup>
