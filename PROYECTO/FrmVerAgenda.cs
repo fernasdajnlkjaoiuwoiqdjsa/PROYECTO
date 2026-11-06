@@ -117,5 +117,12 @@ namespace PROYECTO
             Sesion.CerrarYVolverAlLogin();
 
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            FrmEnviarRecordatorio frmMedico = new FrmEnviarRecordatorio();
+            frmMedico.Show();
+            this.Hide();
+        }
     }
 }

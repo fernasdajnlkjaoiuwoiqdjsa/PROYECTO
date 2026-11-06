@@ -320,6 +320,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icono_correo_64.png" />
+    <None Include="Resources\icono_correo_641.png" />
     <Content Include="Resources\mi_perfil %281%29.png" />
     <None Include="Resources\mi_perfil %281%291.png" />
   </ItemGroup>

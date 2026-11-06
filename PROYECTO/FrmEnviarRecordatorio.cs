@@ -32,8 +32,8 @@ namespace PROYECTO
             }
 
             // Mensaje sugerido, el médico puede editarlo
-            txtMensaje.Text = "Estimado paciente, le recordamos que tenía una cita programada " +
-                              "y no pudo asistir. Por favor comuníquese con nosotros para reprogramarla.";
+            txtMensaje.Text = "Estimado paciente, le recordamos que tenía una cita programada para este dia " +
+                              "si no pudo asistir, por favor comuníquese con nosotros para reprogramar su cita.";
 
             // Evento enlazado por código: NO lo crees también desde el diseñador
             btnEnviarCorreo.Click += btnEnviar_Click;

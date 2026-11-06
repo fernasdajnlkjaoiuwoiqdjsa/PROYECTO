@@ -10,9 +10,16 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocio
 {
+    // Servicio de reportes: es la capa de negocio del administrador para todo lo que son números,
+    // tablas y gráficas (dashboard, reporte de citas, búsqueda y gráficas por estado, por
+    // especialidad y por mes o día). Los formularios le piden los datos a esta clase y ella los
+    // arma juntando los repositorios. El filtrado de las citas lo hace la entidad Administrador
+    // (ReportesdeCitas); aquí solo agrupo y cuento.
     public class ServicioReportes
     {
 
+        // Los repositorios que necesita este servicio. Cada uno se encarga de una tabla.
+        // (El de citas se llama "cita" a secas y lo dejo así porque se usa más abajo.)
         private CitaRepositorio cita = new CitaRepositorio();
 
         private PacienteRepositorio pacienteRepo = new PacienteRepositorio();
@@ -21,6 +28,11 @@ namespace Capa_Negocio
         private UsuarioRepositorio usuarioRepo = new UsuarioRepositorio();
 
         // Números de las 6 tarjetas del dashboard
+        // Devuelve un diccionario con los seis números del dashboard del administrador: citas de
+        // hoy (sin canceladas), canceladas, pendientes, total de pacientes, médicos activos y
+        // total de especialidades. El formulario lee cada tarjeta por su nombre. Para las citas
+        // llamo a GenerarReporteCitas sin filtros, y de paso eso confirma que me pasaron un
+        // administrador. Los médicos activos salen de la lista de usuarios (rol Medico y Activo).
         public Dictionary<string, int> ResumenAdministrador(Administrador admin)
         {
             List<Cita> citas = GenerarReporteCitas(admin, null, null, null);   // también valida al admin
@@ -38,6 +50,11 @@ namespace Capa_Negocio
         }
 
         // Para el pastel "Citas por especialidad"
+        // Cuenta cuántas citas (sin las canceladas) tiene cada especialidad. La cita solo trae el
+        // id del médico y el médico trae su especialidad, así que armo primero un diccionario
+        // médico → especialidad y luego, por cada especialidad del catálogo, cuento las citas cuyo
+        // médico pertenece a ella. Incluyo también las especialidades con 0 citas para que
+        // aparezcan en la gráfica. Devuelve nombre de la especialidad → cantidad.
         public Dictionary<string, int> ReporteEspecialidad(Administrador admin)
         {
             List<Cita> citas = GenerarReporteCitas(admin, null, null, null)
@@ -57,6 +74,10 @@ namespace Capa_Negocio
         }
         //Para la tabla de frmVerReportes
 
+        // Es el método base de todos los reportes: trae todas las citas de la base y le pide a la
+        // entidad Administrador que las filtre por fecha inicial, fecha final y estado (los tres
+        // son opcionales). Antes valido que haya un administrador y que la fecha inicial no sea
+        // mayor que la final. Casi todos los demás métodos de esta clase se apoyan en este.
         public List<Cita> GenerarReporteCitas(Administrador admin, DateTime? desde,
                                               DateTime? hasta, string estado)
         {
@@ -68,6 +89,9 @@ namespace Capa_Negocio
         }
 
         //Para la grefica de pastl q se implementara: Cuantas citas hay por estado
+        // Cuenta las citas por cada estado (Pendiente, Atendida y Cancelar) dentro de un rango de
+        // fechas opcional. Siempre devuelve los tres estados, aunque alguno tenga 0, para que la
+        // gráfica de pastel los muestre todos.
         public Dictionary<string, int> ReporteEstado(Administrador admin, DateTime? desde, DateTime? hasta)
         {
             List<Cita> citas = GenerarReporteCitas(admin, desde, hasta, null);
@@ -79,12 +103,16 @@ namespace Capa_Negocio
                 { EstadosCita.Cancelar, citas.Count(c => c.Estado == EstadosCita.Cancelar) }
             };
         }
+
+        // id_paciente → "Nombre Apellido". Sirve para mostrar el nombre del paciente en la tabla
+        // de reportes y para buscar por nombre.
         public Dictionary<int, string> NombresDePacientes()
         {
             return pacienteRepo.ListarTodos()
                 .ToDictionary(p => p.id_paciente, p => p.Nombre + " " + p.Apellido);
         }
 
+        // id_Medico → "Nombre Apellido". Igual que el anterior pero para médicos.
         public Dictionary<int, string> NombresDeMedicos()
         {
             return medicoRepo.ListarTodos()
@@ -92,6 +120,11 @@ namespace Capa_Negocio
         }
 
         // fecha = null: todas las fechas. estado = null: todos. nombre: busca en paciente o médico
+        // Es el buscador del formulario de reportes. Primero filtro por fecha y estado con
+        // GenerarReporteCitas (mando la misma fecha como inicio y fin para buscar un día exacto) y
+        // después, si escribieron un nombre, me quedo con las citas cuyo paciente o médico
+        // contienen ese texto. Paso todo a minúsculas para que no importe cómo lo escriban. Como
+        // la cita solo trae ids, uso los diccionarios de nombres para comparar.
         public List<Cita> BuscarCitas(Administrador admin, DateTime? fecha, string estado, string nombre)
         {
             List<Cita> citas = GenerarReporteCitas(admin, fecha, fecha, estado);
@@ -107,7 +140,15 @@ namespace Capa_Negocio
                 (med.ContainsKey(c.id_Medico) && med[c.id_Medico].ToLower().Contains(buscado))
             ).ToList();
         }
+
         // agrupar = "Mes" o "Día". Devuelve etiqueta → cantidad de citas
+        // Prepara los datos de la gráfica de columnas de citas por mes o por día. Busca las citas
+        // con BuscarCitas sin filtro de fecha (pero sí con estado y nombre). Si agrupan por "Mes",
+        // agrupo por año y mes y devuelvo una barra por cada mes que tenga citas, en orden
+        // cronológico. Si no, agrupo por día: tomo el mes de referencia (o el del último
+        // registro) y devuelvo todos los días de ese mes, incluso los de 0 citas, para que el eje
+        // se vea completo. El parámetro out titulo le devuelve al formulario el título que debe
+        // llevar la gráfica.
         public Dictionary<string, int> CitasPorPeriodo(Administrador admin, string agrupar,
             DateTime? referencia, string estado, string nombre, out string titulo)
         {
@@ -115,6 +156,7 @@ namespace Capa_Negocio
             Dictionary<string, int> resultado = new Dictionary<string, int>();
             titulo = "Citas por mes";
 
+            // Si no hay citas devuelvo vacío para que el formulario muestre la gráfica sin datos
             if (citas.Count == 0) return resultado;
 
             if (agrupar == "Mes")

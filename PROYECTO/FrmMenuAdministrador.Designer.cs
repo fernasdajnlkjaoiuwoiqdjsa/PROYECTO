@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -297,7 +297,7 @@
             // 
             // panelAtendidas
             // 
-            this.panelAtendidas.BackColor = System.Drawing.Color.MediumPurple;
+            this.panelAtendidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(187)))), ((int)(((byte)(133)))));
             this.panelAtendidas.BorderRadius = 10;
             this.panelAtendidas.Controls.Add(this.label7);
             this.panelAtendidas.Controls.Add(this.label8);
@@ -330,7 +330,7 @@
             // 
             // panelPendientes
             // 
-            this.panelPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.panelPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(133)))), ((int)(((byte)(84)))));
             this.panelPendientes.BorderRadius = 80;
             this.panelPendientes.Controls.Add(this.label5);
             this.panelPendientes.Controls.Add(this.label3);
@@ -363,7 +363,7 @@
             // 
             // panelCitasHoy
             // 
-            this.panelCitasHoy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(138)))), ((int)(((byte)(221)))));
+            this.panelCitasHoy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(194)))), ((int)(((byte)(123)))));
             this.panelCitasHoy.BorderRadius = 19;
             this.panelCitasHoy.Controls.Add(this.lblCitasHoy);
             this.panelCitasHoy.Controls.Add(this.lblTituloCitasHoy);
@@ -396,7 +396,7 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(158)))), ((int)(((byte)(117)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(250)))), ((int)(((byte)(176)))));
             this.guna2Panel1.BorderRadius = 10;
             this.guna2Panel1.Controls.Add(this.label10);
             this.guna2Panel1.Controls.Add(this.label11);
@@ -429,7 +429,7 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(159)))), ((int)(((byte)(39)))));
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(221)))), ((int)(((byte)(189)))));
             this.guna2Panel2.BorderRadius = 80;
             this.guna2Panel2.Controls.Add(this.label12);
             this.guna2Panel2.Controls.Add(this.label13);
@@ -462,7 +462,7 @@
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.HotPink;
+            this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.guna2Panel3.BorderRadius = 19;
             this.guna2Panel3.Controls.Add(this.label14);
             this.guna2Panel3.Controls.Add(this.label15);
@@ -504,16 +504,16 @@
             // 
             // ChartEstado
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ChartEstado.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartEstado.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.ChartEstado.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.ChartEstado.Legends.Add(legend7);
             this.ChartEstado.Location = new System.Drawing.Point(55, 70);
             this.ChartEstado.Name = "ChartEstado";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ChartEstado.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.ChartEstado.Series.Add(series7);
             this.ChartEstado.Size = new System.Drawing.Size(332, 315);
             this.ChartEstado.TabIndex = 5;
             this.ChartEstado.Text = "chart1";
@@ -539,16 +539,16 @@
             // 
             // chartEspecialidad
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartEspecialidad.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartEspecialidad.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.chartEspecialidad.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chartEspecialidad.Legends.Add(legend8);
             this.chartEspecialidad.Location = new System.Drawing.Point(62, 70);
             this.chartEspecialidad.Name = "chartEspecialidad";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartEspecialidad.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartEspecialidad.Series.Add(series8);
             this.chartEspecialidad.Size = new System.Drawing.Size(357, 275);
             this.chartEspecialidad.TabIndex = 5;
             this.chartEspecialidad.Text = "chart2";

@@ -11,16 +11,31 @@ using Capa_Datos;
 
 namespace PROYECTO
 {
-    public class PacienteRepositorio: IRepositorio<Paciente>
+    // Repositorio de pacientes: hace el CRUD de la tabla Pacientes y también de su cuenta (tabla
+    // Usuario) y de sus teléfonos y correos (TelefonoPaciente y Correopaciente). Implementa
+    // IRepositorio<Paciente>, así que el administrador lo usa sin saber cómo se guarda. Como un
+    // paciente está repartido en varias tablas, Guardar, Actualizar y Eliminar usan transacciones:
+    // o se guarda todo o no se guarda nada. Es casi idéntico a MedicoRepositorio, con otras
+    // tablas. Aquí solo hay SQL; las reglas las pone Administrador.GestionarPacintes.
+    public class PacienteRepositorio : IRepositorio<Paciente>
     {
+        // Objeto que abre y cierra la conexión a la base de datos, igual que en los otros repositorios.
         private ConexionBD conexion = new ConexionBD();
 
+        // Consulta base para leer pacientes. Hace INNER JOIN con Usuario para traer en una sola
+        // consulta los datos del paciente y los de su cuenta (usuario y contraseña). Los teléfonos
+        // y correos no vienen aquí porque son varios por paciente y se cargan aparte con
+        // CargarContactos. Cada método le concatena su WHERE u ORDER BY.
         private const string SqlSeleccion = "SELECT p.id_paciente, p.Nombre, p.Apellido, p.FechaNacimineto, " +
             "       u.id_usuario, u.username, u.password " +
             "FROM Pacientes p INNER JOIN Usuario u ON u.id_paciente = p.id_paciente ";
 
 
-        
+
+        // Busca un paciente por su id (el nombre lleva doble r porque así quedó en la interfaz).
+        // Primero lee el paciente con la consulta base; después, si lo encontró, le carga sus
+        // teléfonos y correos. Devuelve el paciente o null si no existe. Cierro el lector antes de
+        // cargar los contactos porque no se pueden tener dos lectores abiertos en la misma conexión.
         public Paciente Buscarr(int id)
         {
             SqlConnection cn = conexion.AbrirConexion();
@@ -41,12 +56,18 @@ namespace PROYECTO
             finally { conexion.CerrarConxion(); }
         }
 
+        // Registra un paciente nuevo. Son tres pasos: (1) insertar en Pacientes y guardar el id
+        // que generó SQL, (2) insertar su cuenta en Usuario con rol "Paciente" y ese id, y (3)
+        // guardar sus teléfonos y correos. Todo va dentro de una transacción: si algo falla hago
+        // Rollback y no queda un paciente sin cuenta. Si el nombre de usuario ya existe, SQL lanza
+        // error 2627 o 2601 y lo cambio por un mensaje claro.
         public void Guardar(Paciente p)
         {
             SqlConnection cn = conexion.AbrirConexion();
             SqlTransaction tx = cn.BeginTransaction();
             try
             {
+                // Paso 1: datos personales del paciente
                 using (SqlCommand cmd = new SqlCommand(
                     "INSERT INTO Pacientes (Nombre, Apellido, FechaNacimineto) " +
                     "VALUES (@n, @a, @f); SELECT SCOPE_IDENTITY();", cn, tx))
@@ -57,6 +78,7 @@ namespace PROYECTO
                     p.id_paciente = Convert.ToInt32(cmd.ExecuteScalar());
                 }
 
+                // Paso 2: su cuenta de login, enlazada al paciente con id_paciente
                 using (SqlCommand cmd = new SqlCommand(
                     "INSERT INTO Usuario (username, password, Rol, id_paciente) " +
                     "VALUES (@u, @p, 'Paciente', @idp); SELECT SCOPE_IDENTITY();", cn, tx))
@@ -67,6 +89,7 @@ namespace PROYECTO
                     p.id_usuario = Convert.ToInt32(cmd.ExecuteScalar());
                 }
 
+                // Paso 3: teléfonos y correos, y confirmo toda la transacción
                 GuardarContactos(cn, tx, p);
                 tx.Commit();
             }
@@ -82,6 +105,10 @@ namespace PROYECTO
             }
             finally { conexion.CerrarConxion(); }
         }
+        // Actualiza un paciente existente: sus datos personales, su cuenta (usuario y contraseña)
+        // y sus contactos. Para los contactos no comparo cuáles cambiaron: borro todos los
+        // teléfonos y correos viejos y vuelvo a insertar los actuales, que es más simple. Todo en
+        // una transacción para que no quede a medias.
         public void Actualizar(Paciente p)
         {
             SqlConnection cn = conexion.AbrirConexion();
@@ -127,6 +154,10 @@ namespace PROYECTO
             finally { conexion.CerrarConxion(); }
         }
 
+        // Elimina un paciente por su id. Hay que borrar en orden, primero las tablas hijas
+        // (teléfonos, correos y cuenta de usuario) y al final el paciente, porque si no las llaves
+        // foráneas lo impiden. Va en una transacción. Si el paciente ya tiene citas, SQL lanza el
+        // error 547 y lo cambio por un mensaje para el usuario.
         public void Eliminar(int id)
         {
             SqlConnection cn = conexion.AbrirConexion();
@@ -157,7 +188,11 @@ namespace PROYECTO
             }
         }
 
-            public List<Paciente> ListarTodos()
+        // Devuelve todos los pacientes ordenados por apellido y nombre. Llena las tablas del
+        // administrador y los selectores de pacientes (por ejemplo en los reportes). Primero leo
+        // todos los pacientes y, cuando el lector ya está cerrado, le cargo a cada uno sus
+        // teléfonos y correos.
+        public List<Paciente> ListarTodos()
         {
             List<Paciente> lista = new List<Paciente>();
             SqlConnection cn = conexion.AbrirConexion();
@@ -172,14 +207,17 @@ namespace PROYECTO
                 // El lector ya está cerrado: ahora se pueden cargar teléfonos y correos
                 foreach (Paciente p in lista) CargarContactos(cn, p);
             }
-            finally 
-            { 
-                conexion.CerrarConxion(); 
+            finally
+            {
+                conexion.CerrarConxion();
             }
             return lista;
         }
 
-        //Metodo privado que se opcupara en buscar y listar para l mantenimineto de estos metodos y evitar estar sobrescribiendo
+        // Convierte una fila del lector en un objeto Paciente con el constructor completo. Las
+        // listas de teléfonos y correos las dejo vacías porque se llenan después en
+        // CargarContactos. La fecha de nacimiento puede ser NULL en la base, y en ese caso uso
+        // DateTime.MinValue para que no se caiga.
         private Paciente Construir(SqlDataReader r)
         {
             return new Paciente(
@@ -189,7 +227,9 @@ namespace PROYECTO
                 r.GetInt32(4), r.GetString(5), r.GetString(6));
         }
 
-        //Metodo privado q se ocuparan en buscar y listar para evitar copiar las 2 consultas y correos en dos sitios
+        // Lee los teléfonos y correos del paciente desde sus tablas y los agrega a las listas del
+        // objeto. Hace dos consultas separadas porque un paciente puede tener varios de cada uno.
+        // Recibe la conexión ya abierta para reutilizarla y no abrir otra.
         private void CargarContactos(SqlConnection cn, Paciente p)
         {
             using (SqlCommand cmd = new SqlCommand(
@@ -209,7 +249,9 @@ namespace PROYECTO
             }
         }
 
-        //Metodo privado de buscar y actualizar para evitar copiar los bucles de insert n dos sitios
+        // Guarda cada teléfono y cada correo del paciente, uno por fila, en sus tablas. Recibe la
+        // transacción (tx) para que estos inserts formen parte de la misma que Guardar o Actualizar
+        // y, si algo falla, se deshagan también. Uso Trim() para quitar espacios sobrantes.
         private void GuardarContactos(SqlConnection cn, SqlTransaction tx, Paciente p)
         {
             foreach (string tel in p.Telefono)
@@ -235,7 +277,9 @@ namespace PROYECTO
             }
         }
 
-        // Mtodo privado q lo ocupa actualizar y liminar para evitar copiar 6 bloques d using sqlcomand casi identicos
+        // Ayudante para ejecutar un DELETE sencillo que solo recibe un @id, dentro de la
+        // transacción. Lo hice para no repetir las mismas líneas en cada borrado de Actualizar y
+        // Eliminar.
         private void Ejecutar(SqlConnection cn, SqlTransaction tx, string sql, int id)
         {
             using (SqlCommand cmd = new SqlCommand(sql, cn, tx))
@@ -247,5 +291,5 @@ namespace PROYECTO
 
         // TODOS ESTOS METODOS PRIVADOS LOS PONGO POR MANTENIMIENTO DEL SISTEEMA
     }
-    
+
 }

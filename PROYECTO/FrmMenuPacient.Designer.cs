@@ -215,7 +215,7 @@
             // 
             // panelAtendidas
             // 
-            this.panelAtendidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(158)))), ((int)(((byte)(117)))));
+            this.panelAtendidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(145)))), ((int)(((byte)(0)))));
             this.panelAtendidas.BorderRadius = 10;
             this.panelAtendidas.Controls.Add(this.lblTarjetaAtendidas);
             this.panelAtendidas.Controls.Add(this.label8);
@@ -229,7 +229,7 @@
             this.lblTarjetaAtendidas.AutoSize = true;
             this.lblTarjetaAtendidas.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTarjetaAtendidas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTarjetaAtendidas.Location = new System.Drawing.Point(30, 83);
+            this.lblTarjetaAtendidas.Location = new System.Drawing.Point(23, 71);
             this.lblTarjetaAtendidas.Name = "lblTarjetaAtendidas";
             this.lblTarjetaAtendidas.Size = new System.Drawing.Size(39, 48);
             this.lblTarjetaAtendidas.TabIndex = 3;
@@ -240,7 +240,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(31, 30);
+            this.label8.Location = new System.Drawing.Point(15, 17);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(203, 38);
             this.label8.TabIndex = 2;
@@ -248,7 +248,7 @@
             // 
             // panelPendientes
             // 
-            this.panelPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(159)))), ((int)(((byte)(39)))));
+            this.panelPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(51)))));
             this.panelPendientes.BorderRadius = 80;
             this.panelPendientes.Controls.Add(this.lblTarjetaPendientes);
             this.panelPendientes.Controls.Add(this.label3);
@@ -262,7 +262,7 @@
             this.lblTarjetaPendientes.AutoSize = true;
             this.lblTarjetaPendientes.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTarjetaPendientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTarjetaPendientes.Location = new System.Drawing.Point(20, 83);
+            this.lblTarjetaPendientes.Location = new System.Drawing.Point(11, 71);
             this.lblTarjetaPendientes.Name = "lblTarjetaPendientes";
             this.lblTarjetaPendientes.Size = new System.Drawing.Size(39, 48);
             this.lblTarjetaPendientes.TabIndex = 3;
@@ -273,7 +273,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(21, 30);
+            this.label3.Location = new System.Drawing.Point(12, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(221, 38);
             this.label3.TabIndex = 2;
@@ -281,7 +281,8 @@
             // 
             // panelCitasHoy
             // 
-            this.panelCitasHoy.BackColor = System.Drawing.Color.MediumOrchid;
+            this.panelCitasHoy.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelCitasHoy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(115)))), ((int)(((byte)(0)))));
             this.panelCitasHoy.BorderRadius = 19;
             this.panelCitasHoy.Controls.Add(this.lblTarjetaProxima);
             this.panelCitasHoy.Controls.Add(this.label9);
@@ -295,7 +296,7 @@
             this.lblTarjetaProxima.AutoSize = true;
             this.lblTarjetaProxima.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTarjetaProxima.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTarjetaProxima.Location = new System.Drawing.Point(20, 83);
+            this.lblTarjetaProxima.Location = new System.Drawing.Point(6, 71);
             this.lblTarjetaProxima.Name = "lblTarjetaProxima";
             this.lblTarjetaProxima.Size = new System.Drawing.Size(135, 48);
             this.lblTarjetaProxima.TabIndex = 1;
@@ -306,7 +307,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(21, 30);
+            this.label9.Location = new System.Drawing.Point(7, 17);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(168, 38);
             this.label9.TabIndex = 0;

@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Capa_Entidad
 {
+    //Interfaz que define los métodos que deben implementar las clases que la implementen
     public class Receta
     {
+        //Propiedades de la clase Receta referenciando  a la base de datos
         public int id_receta {  get; set; }
         public string Descripcion { get; set; }
-
+        // Propiedad de navegación que representa la relación con la clase Cita
         public int id_cita { get; private set; }
-
+        //Constructor de la clase Receta con parámetros para inicializar las propiedades
         public Receta(int idreceta, string dscripcion, int idCita)
         {
             id_receta = idreceta;
@@ -23,7 +25,7 @@ namespace Capa_Entidad
         {
 
         }
-
+        //Método para mostrar la información de la receta en formato de cadena
         public string Generar(Medico medico, Paciente paciente, Cita cita)
         {
             if (medico == null) throw new ArgumentNullException(nameof(medico));
@@ -35,7 +37,7 @@ namespace Capa_Entidad
                 throw new InvalidOperationException("Esta receta no pertenece a este paciente.");
             if (cita.id_Medico != medico.id_Medico)
                 throw new InvalidOperationException("Esta receta no fue emitida por este médico.");
-
+            // Generar la información de la receta en formato de cadena
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("RECETA MÉDICA");
             sb.AppendLine($"Paciente: {paciente.Nombre} {paciente.Apellido}");

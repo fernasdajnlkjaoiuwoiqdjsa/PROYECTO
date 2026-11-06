@@ -47,6 +47,7 @@
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblMenuMedico = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.btnEstado3 = new Guna.UI2.WinForms.Guna2Button();
             this.btnEstado2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panelCitasHoy.SuspendLayout();
             this.panelPendientes.SuspendLayout();
             this.panelAtendidas.SuspendLayout();
@@ -78,7 +78,7 @@
             // 
             // panelCitasHoy
             // 
-            this.panelCitasHoy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(138)))), ((int)(((byte)(221)))));
+            this.panelCitasHoy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(183)))), ((int)(((byte)(242)))));
             this.panelCitasHoy.BorderRadius = 19;
             this.panelCitasHoy.Controls.Add(this.lblTarjetaHoy);
             this.panelCitasHoy.Controls.Add(this.label3);
@@ -92,7 +92,7 @@
             this.lblTarjetaHoy.AutoSize = true;
             this.lblTarjetaHoy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTarjetaHoy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTarjetaHoy.Location = new System.Drawing.Point(24, 71);
+            this.lblTarjetaHoy.Location = new System.Drawing.Point(20, 71);
             this.lblTarjetaHoy.Name = "lblTarjetaHoy";
             this.lblTarjetaHoy.Size = new System.Drawing.Size(39, 48);
             this.lblTarjetaHoy.TabIndex = 1;
@@ -111,7 +111,7 @@
             // 
             // panelPendientes
             // 
-            this.panelPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(159)))), ((int)(((byte)(39)))));
+            this.panelPendientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(218)))), ((int)(((byte)(249)))));
             this.panelPendientes.BorderRadius = 80;
             this.panelPendientes.Controls.Add(this.lblTarjetaPendientes);
             this.panelPendientes.Controls.Add(this.label6);
@@ -125,7 +125,7 @@
             this.lblTarjetaPendientes.AutoSize = true;
             this.lblTarjetaPendientes.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTarjetaPendientes.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTarjetaPendientes.Location = new System.Drawing.Point(20, 71);
+            this.lblTarjetaPendientes.Location = new System.Drawing.Point(23, 71);
             this.lblTarjetaPendientes.Name = "lblTarjetaPendientes";
             this.lblTarjetaPendientes.Size = new System.Drawing.Size(39, 48);
             this.lblTarjetaPendientes.TabIndex = 3;
@@ -136,7 +136,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(21, 13);
+            this.label6.Location = new System.Drawing.Point(15, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(153, 38);
             this.label6.TabIndex = 2;
@@ -144,7 +144,7 @@
             // 
             // panelAtendidas
             // 
-            this.panelAtendidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(158)))), ((int)(((byte)(117)))));
+            this.panelAtendidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(121)))), ((int)(((byte)(176)))));
             this.panelAtendidas.BorderRadius = 10;
             this.panelAtendidas.Controls.Add(this.lblTarjetaAtendidasHoy);
             this.panelAtendidas.Controls.Add(this.label8);
@@ -158,7 +158,7 @@
             this.lblTarjetaAtendidasHoy.AutoSize = true;
             this.lblTarjetaAtendidasHoy.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTarjetaAtendidasHoy.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTarjetaAtendidasHoy.Location = new System.Drawing.Point(29, 71);
+            this.lblTarjetaAtendidasHoy.Location = new System.Drawing.Point(15, 71);
             this.lblTarjetaAtendidasHoy.Name = "lblTarjetaAtendidasHoy";
             this.lblTarjetaAtendidasHoy.Size = new System.Drawing.Size(39, 48);
             this.lblTarjetaAtendidasHoy.TabIndex = 3;
@@ -282,6 +282,27 @@
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.Size = new System.Drawing.Size(383, 660);
             this.guna2GradientPanel2.TabIndex = 13;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Image = global::PROYECTO.Properties.Resources.icono_correo_64;
+            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.Location = new System.Drawing.Point(11, 453);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.guna2Button2.Size = new System.Drawing.Size(366, 57);
+            this.guna2Button2.TabIndex = 10;
+            this.guna2Button2.Text = "Recordatorio";
+            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
             // 
             // guna2Button1
             // 
@@ -454,27 +475,6 @@
             this.btnEstado2.Size = new System.Drawing.Size(119, 33);
             this.btnEstado2.TabIndex = 9;
             this.btnEstado2.Text = "Buttom";
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.White;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Image = global::PROYECTO.Properties.Resources.icono_correo_64;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.Location = new System.Drawing.Point(11, 453);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.guna2Button2.Size = new System.Drawing.Size(366, 57);
-            this.guna2Button2.TabIndex = 10;
-            this.guna2Button2.Text = "Recordatorio";
-            this.guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click_1);
             // 
             // FmrMenuMedico
             // 
